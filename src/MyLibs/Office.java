@@ -11,4 +11,20 @@ package MyLibs;
  */
 public class Office {
     public int officeHoursStart;
+    public int officeHoursEnd;
+    public int squareFeet;
+    public double height;
+    public double capacity;
+    //public array limot ko
+    
+    
+    public void openOffice()
+    {
+        
+    }
+    
+    public void closeOffice()
+    {
+        
+    }
 }
