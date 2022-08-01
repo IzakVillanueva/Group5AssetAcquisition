@@ -9,6 +9,6 @@ package MyLibs;
  *
  * @author jeste
  */
-public abstract class Security {
+public class Security extends Office{
     
 }

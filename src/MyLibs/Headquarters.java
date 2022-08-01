@@ -9,7 +9,7 @@ package MyLibs;
  *
  * @author jeste
  */
-public abstract class Headquarters {
+public class Headquarters extends Office{
     
     
     
