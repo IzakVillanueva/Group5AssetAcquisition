@@ -25,16 +25,6 @@ public abstract class Office {
         this.capacity = capacity;
     }
     
-    public void openOffice()
-    {
-        
-    }
-    
-    public void closeOffice()
-    {
-        
-    }
-    
     public String getName() {
         return name;
     }
