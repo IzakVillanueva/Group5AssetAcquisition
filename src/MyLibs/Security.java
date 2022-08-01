@@ -11,4 +11,8 @@ package MyLibs;
  */
 public class Security extends Office{
     
+    public Security(OfficeMediator mediator) {
+        super(mediator);
+    }
+    
 }

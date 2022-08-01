@@ -10,7 +10,9 @@ package MyLibs;
  * @author jeste
  */
 public class Headquarters extends Office{
-    
-    
-    
+        
+    public Headquarters(OfficeMediator mediator) {
+        super(mediator);
+    }
+        
 }

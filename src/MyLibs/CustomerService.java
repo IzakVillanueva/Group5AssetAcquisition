@@ -10,5 +10,9 @@ package MyLibs;
  * @author jeste
  */
 public class CustomerService extends Office{
+
+    public CustomerService(OfficeMediator mediator) {
+        super(mediator);
+    }
     
 }
