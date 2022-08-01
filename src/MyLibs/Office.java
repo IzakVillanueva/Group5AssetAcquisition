@@ -10,11 +10,8 @@ package MyLibs;
  * @author Izak
  */
 public class Office {
-    public int officeHoursStart;
-    public int officeHoursEnd;
-    public int squareFeet;
-    public double height;
-    public double capacity;
+    public int officeHoursStart, officeHoursEnd, squareFeet;
+    public double height, capacity;
     //public array limot ko
     
     

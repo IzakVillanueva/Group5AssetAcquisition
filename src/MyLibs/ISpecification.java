@@ -11,4 +11,7 @@ package MyLibs;
  */
 public class ISpecification {
     
+    public int voltage;
+    public float size;
+    public float weight;
 }

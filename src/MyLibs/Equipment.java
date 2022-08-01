@@ -11,4 +11,13 @@ package MyLibs;
  */
 public class Equipment {
     
+    public String name;
+    public int years;
+    public Condition condition; 
+    
+    public void powerOnOff()
+    {
+        
+    }
+    
 }
