@@ -12,9 +12,10 @@ import java.util.ArrayList;
  * @author Izak
  */
 public class Office {
+    public String name;
     public int officeHoursStart, officeHoursEnd, squareFeet;
     public double height, capacity;
-    public ArrayList <Equipment> equipment; 
+    public ArrayList <Equipment> equipments; 
     
     
     
