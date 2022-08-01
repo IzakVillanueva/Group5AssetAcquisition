@@ -13,12 +13,18 @@ import MyLibs.*;
  */
 public class MainForm extends javax.swing.JFrame {
     private OfficeMediator officeMed;
+    private Office office1;
+    private Office office2;
+    private Office office3;
     /**
      * Creates new form MainForm
      */
     public MainForm() {
         initComponents();
         officeMed = new OfficeMediator();
+        office1 = new Headquarters(officeMed, "Head Office", 6, 20, 50);
+        office2 = new CustomerService(officeMed, "Customer Service Branch", 9, 21, 100);
+        office3 = new Security(officeMed, "Security Office", 7, 17, 20);
     }
 
     /**
