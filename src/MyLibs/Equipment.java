@@ -41,11 +41,5 @@ public class Equipment {
         this.years = years;
         this.office = office;
         this.condition = condition;
-    }
-    
-    public void powerOnOff()
-    {
-        
-    }
-    
+    }    
 }

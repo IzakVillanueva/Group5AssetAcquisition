@@ -9,10 +9,15 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Router extends Equipment{
+public class Router extends Equipment implements ISpecification{
 
     public Router(String name, int years, String office, String condition) {
         super(name, years, office, condition);
+    }
+
+    @Override
+    public void powerOnOff() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

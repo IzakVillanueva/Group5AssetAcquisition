@@ -9,9 +9,6 @@ package MyLibs;
  *
  * @author jeste
  */
-public class ISpecification {
-    
-    public int voltage;
-    public float size;
-    public float weight;
+public interface ISpecification {
+    public void powerOnOff();
 }
