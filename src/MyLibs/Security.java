@@ -9,6 +9,6 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Security {
+public abstract class Security {
     
 }

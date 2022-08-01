@@ -9,7 +9,7 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Headquarters {
+public abstract class Headquarters {
     
     
     

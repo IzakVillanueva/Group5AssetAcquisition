@@ -9,6 +9,6 @@ package MyLibs;
  *
  * @author jeste
  */
-public class CustomerService {
+public abstract class CustomerService {
     
 }
