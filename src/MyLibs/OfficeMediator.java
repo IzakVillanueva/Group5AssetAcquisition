@@ -34,6 +34,8 @@ public class OfficeMediator implements IMediator{
 
     @Override
     public void removeEquipment(Office office, Equipment equipment) {
+        office.equipments.remove(equipment);
+        equipment.office = office.name;
     }
 
     @Override
