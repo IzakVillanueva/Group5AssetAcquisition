@@ -16,5 +16,7 @@ public class EquipmentList {
     
     public EquipmentList(){
         equipmentList = new ArrayList<Equipment>();
+        
+        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
     }
 }
