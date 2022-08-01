@@ -5,6 +5,8 @@
  */
 package MyLibs;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Izak
@@ -12,7 +14,8 @@ package MyLibs;
 public class Office {
     public int officeHoursStart, officeHoursEnd, squareFeet;
     public double height, capacity;
-    //public array limot ko
+    public ArrayList <Equipment> equipment; 
+    
     
     
     public void openOffice()
