@@ -10,5 +10,5 @@ package MyLibs;
  * @author Izak
  */
 public class Office {
-    //test
+    public int officeHoursStart;
 }
