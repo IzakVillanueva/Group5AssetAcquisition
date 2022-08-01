@@ -22,6 +22,8 @@ public class OfficeMediator implements IMediator{
     
     @Override
     public void addEquipment(Office office, Equipment equipment) {
+        office.equipments.add(equipment);
+        equipment.office = office.name;
     }
 
     @Override
