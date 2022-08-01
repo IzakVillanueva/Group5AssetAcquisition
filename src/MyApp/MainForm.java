@@ -29,6 +29,53 @@ public class MainForm extends javax.swing.JFrame {
         office2 = new CustomerService(officeMed, "Customer Service Branch", 9, 21, 100);
         office3 = new Security(officeMed, "Security Office", 7, 17, 20);
     }
+    
+    private void showEquipmentList(){
+        DefaultTableModel model = (DefaultTableModel) getEquipmentListTbl().getModel();
+        model.setRowCount(0);
+        for(Equipment e:officeMed.equipmentList){
+            String name = e.getName();
+            int years = e.getYears();
+            String office = e.getOffice();
+            String condition = e.getCondition();
+            
+            model.insertRow(model.getRowCount(), new Object[]{name, years, office, condition});
+        }
+    }
+    
+    private void updateTable(){
+        DefaultTableModel off1 = (DefaultTableModel) getOffice1Tbl().getModel();
+        DefaultTableModel off2 = (DefaultTableModel) getOffice2Tbl().getModel();
+        DefaultTableModel off3 = (DefaultTableModel) getOffice3Tbl().getModel();
+        off1.setRowCount(0);
+        off2.setRowCount(0);
+        off3.setRowCount(0);
+        for(Equipment e:officeMed.equipmentList){
+            if(e.getOffice() == office1.getName()){
+                String name = e.getName();
+                int years = e.getYears();
+                String office = e.getOffice();
+                String condition = e.getCondition();
+                
+                off1.insertRow(off1.getRowCount(), new Object[]{name, years, office, condition});
+            }
+            else if(e.getOffice() == office2.getName()){
+                String name = e.getName();
+                int years = e.getYears();
+                String office = e.getOffice();
+                String condition = e.getCondition();
+                off2.insertRow(off2.getRowCount(), new Object[]{name, years, office, condition});
+            }
+            else if(e.getOffice() == office3.getName()){
+                String name = e.getName();
+                int years = e.getYears();
+                String office = e.getOffice();
+                String condition = e.getCondition();
+                off3.insertRow(off3.getRowCount(), new Object[]{name, years, office, condition});
+            }
+        }
+        showEquipmentList();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +100,9 @@ public class MainForm extends javax.swing.JFrame {
         officeLabel3 = new javax.swing.JLabel();
         dispEqBtn1 = new javax.swing.JButton();
         AddOffice1Btn = new javax.swing.JButton();
+        AddOffice2Btn = new javax.swing.JButton();
+        AddOffice3Btn = new javax.swing.JButton();
+        lostEqBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,38 +180,66 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
+        AddOffice2Btn.setText("Add to Office2");
+        AddOffice2Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddOffice2BtnActionPerformed(evt);
+            }
+        });
+
+        AddOffice3Btn.setText("Add to Office3");
+        AddOffice3Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddOffice3BtnActionPerformed(evt);
+            }
+        });
+
+        lostEqBtn.setText("jButton1");
+        lostEqBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lostEqBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(officeLabel1)
-                        .addGap(192, 192, 192)
-                        .addComponent(officeLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Office1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(Office2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(officeLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Office3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dispEqBtn1)
-                                    .addComponent(AddOffice1Btn)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel1)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(AddOffice1Btn)
+                                .addComponent(Office1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(officeLabel1))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(officeLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Office2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AddOffice2Btn))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(officeLabel3)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(AddOffice3Btn)
+                                            .addComponent(Office3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(68, 68, 68)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dispEqBtn1)
+                                            .addComponent(lostEqBtn)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)
+                        .addGap(199, 199, 199)))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,15 +260,81 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(Office3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(dispEqBtn1)
-                        .addGap(18, 18, 18)
-                        .addComponent(AddOffice1Btn)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(lostEqBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddOffice1Btn)
+                    .addComponent(AddOffice2Btn)
+                    .addComponent(AddOffice3Btn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void dispEqBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dispEqBtn1ActionPerformed
+        showEquipmentList();
+    }//GEN-LAST:event_dispEqBtn1ActionPerformed
+
+    private void AddOffice1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOffice1BtnActionPerformed
+        if(EquipmentListTbl.getSelectedRow() < 0){
+            JOptionPane.showMessageDialog(null, "Select an equipment first!");
+        }
+        else{
+            DefaultTableModel model1 = (DefaultTableModel) getEquipmentListTbl().getModel();
+            DefaultTableModel model2 = (DefaultTableModel) getOffice1Tbl().getModel();
+            int col = 0;
+            int row = EquipmentListTbl.getSelectedRow();
+            String x = model1.getValueAt(row, col).toString();
+            for(Equipment e:officeMed.equipmentList){
+                if(e.getName() == x){
+                    office1.addEquipment(office1, e);
+                }
+            }
+            updateTable();
+        }
+    }//GEN-LAST:event_AddOffice1BtnActionPerformed
+
+    private void AddOffice2BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOffice2BtnActionPerformed
+        if(EquipmentListTbl.getSelectedRow() < 0){
+            JOptionPane.showMessageDialog(null, "Select an equipment first!");
+        }
+        else{
+            DefaultTableModel model1 = (DefaultTableModel) getEquipmentListTbl().getModel();
+            DefaultTableModel model2 = (DefaultTableModel) getOffice2Tbl().getModel();
+            int col = 0;
+            int row = EquipmentListTbl.getSelectedRow();
+            String x = model1.getValueAt(row, col).toString();
+            for(Equipment e:officeMed.equipmentList){
+                if(e.getName() == x){
+                    office2.addEquipment(office2, e);
+                }
+            }
+            updateTable();
+        }
+    }//GEN-LAST:event_AddOffice2BtnActionPerformed
+
+    private void AddOffice3BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOffice3BtnActionPerformed
+        if(EquipmentListTbl.getSelectedRow() < 0){
+            JOptionPane.showMessageDialog(null, "Select an equipment first!");
+        }
+        else{
+            DefaultTableModel model1 = (DefaultTableModel) getEquipmentListTbl().getModel();
+            DefaultTableModel model2 = (DefaultTableModel) getOffice3Tbl().getModel();
+            int col = 0;
+            int row = EquipmentListTbl.getSelectedRow();
+            String x = model1.getValueAt(row, col).toString();
+            for(Equipment e:officeMed.equipmentList){
+                if(e.getName() == x){
+                    office3.addEquipment(office3, e);
+                }
+            }
+            updateTable();
+        }
+    }//GEN-LAST:event_AddOffice3BtnActionPerformed
+
+    private void lostEqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lostEqBtnActionPerformed
         DefaultTableModel model = (DefaultTableModel) getEquipmentListTbl().getModel();
         model.setRowCount(0);
         for(Equipment e:officeMed.equipmentList){
@@ -201,16 +345,7 @@ public class MainForm extends javax.swing.JFrame {
             
             model.insertRow(model.getRowCount(), new Object[]{name, years, office, condition});
         }
-    }//GEN-LAST:event_dispEqBtn1ActionPerformed
-
-    private void AddOffice1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOffice1BtnActionPerformed
-        DefaultTableModel model1 = (DefaultTableModel) getEquipmentListTbl().getModel();
-        DefaultTableModel model2 = (DefaultTableModel) getOffice1Tbl().getModel();
-        int col = 0;
-        int row = EquipmentListTbl.getSelectedRow();
-        String x = model1.getValueAt(row, col).toString();
-        JOptionPane.showMessageDialog(null, x);
-    }//GEN-LAST:event_AddOffice1BtnActionPerformed
+    }//GEN-LAST:event_lostEqBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,6 +384,8 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddOffice1Btn;
+    private javax.swing.JButton AddOffice2Btn;
+    private javax.swing.JButton AddOffice3Btn;
     private javax.swing.JTable EquipmentListTbl;
     private javax.swing.JScrollPane Office1;
     private javax.swing.JTable Office1Tbl;
@@ -259,6 +396,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton dispEqBtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton lostEqBtn;
     private javax.swing.JLabel officeLabel1;
     private javax.swing.JLabel officeLabel2;
     private javax.swing.JLabel officeLabel3;
@@ -278,5 +416,21 @@ public class MainForm extends javax.swing.JFrame {
 
     public void setOffice1Tbl(JTable Office1Tbl) {
         this.Office1Tbl = Office1Tbl;
+    }
+    
+    public JTable getOffice2Tbl() {
+        return Office2Tbl;
+    }
+
+    public void setOffice2Tbl(JTable Office2Tbl) {
+        this.Office2Tbl = Office2Tbl;
+    }
+    
+    public JTable getOffice3Tbl() {
+        return Office3Tbl;
+    }
+
+    public void setOffice3Tbl(JTable Office3Tbl) {
+        this.Office3Tbl = Office3Tbl;
     }
 }
