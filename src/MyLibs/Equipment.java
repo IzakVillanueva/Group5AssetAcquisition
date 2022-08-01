@@ -12,6 +12,9 @@ package MyLibs;
 public class Equipment {
     
     protected String name;
+    protected int years;
+    protected String office;
+    protected String condition; 
 
     public String getName() {
         return name;
@@ -24,13 +27,14 @@ public class Equipment {
     public String getOffice() {
         return office;
     }
+    
+    public void setOffice(String office) {
+        this.office = office;
+    }
 
     public String getCondition() {
         return condition;
     }
-    protected int years;
-    protected String office;
-    protected String condition; 
     
     public Equipment(String name, int years, String office, String condition){
         this.name = name;

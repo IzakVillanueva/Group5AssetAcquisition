@@ -35,6 +35,10 @@ public abstract class Office {
         
     }
     
+    public String getName() {
+        return name;
+    }
+    
     public void addEquipment(Office office, Equipment equipment) {
         mediator.addEquipment(office, equipment);
     }
