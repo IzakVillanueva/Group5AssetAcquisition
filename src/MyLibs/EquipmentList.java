@@ -5,10 +5,16 @@
  */
 package MyLibs;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Izak
  */
 public class EquipmentList {
+    private ArrayList<Equipment> equipmentList;
     
+    public EquipmentList(){
+        equipmentList = new ArrayList<Equipment>();
+    }
 }
