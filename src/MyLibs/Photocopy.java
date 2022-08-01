@@ -9,6 +9,10 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Photocopy {
+public class Photocopy extends Equipment{
+
+    public Photocopy(String name, int years, String office, String condition) {
+        super(name, years, office, condition);
+    }
     
 }

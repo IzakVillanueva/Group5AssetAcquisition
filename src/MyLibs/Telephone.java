@@ -9,6 +9,10 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Telephone {
+public class Telephone extends Equipment{
+
+    public Telephone(String name, int years, String office, String condition) {
+        super(name, years, office, condition);
+    }
     
 }

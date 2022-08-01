@@ -9,6 +9,10 @@ package MyLibs;
  *
  * @author jeste
  */
-public class Router {
+public class Router extends Equipment{
+
+    public Router(String name, int years, String office, String condition) {
+        super(name, years, office, condition);
+    }
     
 }
