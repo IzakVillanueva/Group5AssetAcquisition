@@ -5,17 +5,20 @@
  */
 package MyApp;
 
+import MyLibs.*;
+
 /**
  *
  * @author Izak
  */
 public class MainForm extends javax.swing.JFrame {
-
+    private OfficeMediator officeMed;
     /**
      * Creates new form MainForm
      */
     public MainForm() {
         initComponents();
+        officeMed = new OfficeMediator();
     }
 
     /**
