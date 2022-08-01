@@ -169,8 +169,8 @@ public class MainForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(207, 207, 207)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(officeLabel1)
                     .addComponent(officeLabel2)
@@ -205,7 +205,11 @@ public class MainForm extends javax.swing.JFrame {
 
     private void AddOffice1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOffice1BtnActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) getEquipmentListTbl().getModel();
-        DefaultTableModel model2 = (DefaultTableModel) getEquipmentListTbl().getModel();
+        DefaultTableModel model2 = (DefaultTableModel) getOffice1Tbl().getModel();
+        int col = 0;
+        int row = EquipmentListTbl.getSelectedRow();
+        String x = model1.getValueAt(row, col).toString();
+        JOptionPane.showMessageDialog(null, x);
     }//GEN-LAST:event_AddOffice1BtnActionPerformed
 
     /**
@@ -269,10 +273,10 @@ public class MainForm extends javax.swing.JFrame {
     }
     
     public JTable getOffice1Tbl() {
-        return EquipmentListTbl;
+        return Office1Tbl;
     }
 
-    public void setEquipmentListTbl(JTable EquipmentListTbl) {
-        this.EquipmentListTbl = EquipmentListTbl;
+    public void setOffice1Tbl(JTable Office1Tbl) {
+        this.Office1Tbl = Office1Tbl;
     }
 }

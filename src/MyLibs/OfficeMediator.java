@@ -17,7 +17,7 @@ public class OfficeMediator implements IMediator{
     public OfficeMediator(){
         equipmentList = new ArrayList<Equipment>();
         
-       equipmentList.add(new Printer("Canon", 5, "", "good condition"));
+       equipmentList.add(new Printer("Canon1", 5, "", "good condition"));
        equipmentList.add(new Computer("Lenovo", 4, "", "new"));
        equipmentList.add(new Photocopy ("Xerox", 7, "", "needs repair"));
        equipmentList.add(new Telephone ("PLDT Home", 7, "", "replacement or lost"));
@@ -31,7 +31,7 @@ public class OfficeMediator implements IMediator{
        equipmentList.add(new Router("Globe", 1, "", "new"));
        
        equipmentList.add(new Telephone("Apple", 3, "", "good condition"));
-       equipmentList.add(new Photocopy("Canon", 12, "", "replacement or lost"));
+       equipmentList.add(new Photocopy("Canon2", 12, "", "replacement or lost"));
        equipmentList.add(new Computer("Acer", 6, "", "good condition"));
        equipmentList.add(new Printer("Lexmark", 2, "", "new"));
        equipmentList.add(new Router("Smart", 8, "", "needs repair"));
