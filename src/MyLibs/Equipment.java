@@ -11,9 +11,17 @@ package MyLibs;
  */
 public class Equipment {
     
-    public String name;
-    public int years;
-    public Condition condition; 
+    protected String name;
+    protected int years;
+    protected String office;
+    protected String condition; 
+    
+    public Equipment(String name, int years, String office, String condition){
+        this.name = name;
+        this.years = years;
+        this.office = office;
+        this.condition = condition;
+    }
     
     public void powerOnOff()
     {
