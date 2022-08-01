@@ -6,6 +6,8 @@
 package MyApp;
 
 import MyLibs.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,6 +27,29 @@ public class MainForm extends javax.swing.JFrame {
         office1 = new Headquarters(officeMed, "Head Office", 6, 20, 50);
         office2 = new CustomerService(officeMed, "Customer Service Branch", 9, 21, 100);
         office3 = new Security(officeMed, "Security Office", 7, 17, 20);
+        populateEquipmentTable();
+    }
+    
+    private void populateEquipmentTable(){
+        DefaultTableModel model = (DefaultTableModel) getEquipmentListTbl().getModel();
+        model.setRowCount(0);
+//        String temp1 = b.getAuthor();
+//            String [] temp = temp1.split(" ");
+//            String author = temp[1] + ", " + temp[0];
+//            String title = b.getTitle();
+//            
+//            String publisher = b.getPublisher().getName();
+//            String state = b.getPublisher().getAddress().getCity();
+//            String country = b.getPublisher().getAddress().getCountry();
+//            String date = b.getPubDate().convertMonth(b.getPubDate().getMonth()) + " " + b.getPubDate().getYear();
+        for(Equipment e:officeMed.equipmentList){
+            String name = e.getName();
+            int years = e.getYears();
+            String office = e.getOffice();
+            String condition = e.getCondition();
+            
+            model.insertRow(model.getRowCount(), new Object[]{name, years, office, condition});
+        }
     }
 
     /**
@@ -38,13 +63,13 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        EquipmentListTbl = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Office 1");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        EquipmentListTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -52,10 +77,10 @@ public class MainForm extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Years", "Office", "Condition"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(EquipmentListTbl);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,8 +142,16 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable EquipmentListTbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getEquipmentListTbl() {
+        return EquipmentListTbl;
+    }
+
+    public void setEquipmentListTbl(JTable EquipmentListTbl) {
+        this.EquipmentListTbl = EquipmentListTbl;
+    }
 }
