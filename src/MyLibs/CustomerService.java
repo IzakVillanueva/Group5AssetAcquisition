@@ -11,8 +11,9 @@ package MyLibs;
  */
 public class CustomerService extends Office{
 
-    public CustomerService(OfficeMediator mediator) {
-        super(mediator);
+    public CustomerService(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity) {
+        super(mediator, name, officeHoursStart, officeHoursEnd, capacity);
     }
+
     
 }

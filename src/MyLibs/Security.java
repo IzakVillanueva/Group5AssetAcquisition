@@ -11,8 +11,8 @@ package MyLibs;
  */
 public class Security extends Office{
     
-    public Security(OfficeMediator mediator) {
-        super(mediator);
+    public Security(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity) {
+        super(mediator, name, officeHoursStart, officeHoursEnd, capacity);
     }
     
 }

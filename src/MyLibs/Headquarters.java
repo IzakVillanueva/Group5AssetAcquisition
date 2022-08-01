@@ -11,8 +11,8 @@ package MyLibs;
  */
 public class Headquarters extends Office{
         
-    public Headquarters(OfficeMediator mediator) {
-        super(mediator);
+    public Headquarters(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity) {
+        super(mediator, name, officeHoursStart, officeHoursEnd, capacity);
     }
         
 }
