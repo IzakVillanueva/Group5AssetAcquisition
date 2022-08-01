@@ -214,7 +214,7 @@ public class MainForm extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Years", "Office", "Condition"
             }
         ));
         jScrollPane2.setViewportView(lostTbl);
