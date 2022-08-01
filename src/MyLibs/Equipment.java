@@ -12,6 +12,22 @@ package MyLibs;
 public class Equipment {
     
     protected String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYears() {
+        return years;
+    }
+
+    public String getOffice() {
+        return office;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
     protected int years;
     protected String office;
     protected String condition; 
