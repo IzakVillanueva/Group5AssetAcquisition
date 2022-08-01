@@ -12,13 +12,16 @@ import java.util.ArrayList;
  * @author Izak
  */
 public class OfficeMediator implements IMediator{
+    private ArrayList<Equipment> equipmentList;
     
     public OfficeMediator(){
+        equipmentList = new ArrayList<Equipment>();
+        
+        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
     }
     
     @Override
     public void addEquipment(Office office, Equipment equipment) {
-        
     }
 
     @Override
