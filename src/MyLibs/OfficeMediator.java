@@ -29,11 +29,13 @@ public class OfficeMediator implements IMediator{
     @Override
     public void removeEquipment(Office office, Equipment equipment) {
         office.equipments.remove(equipment);
-        equipment.office = office.name;
+        equipment.office = "";
     }
 
     @Override
     public void moveEquipment(Office office1, Office office2, Equipment equipment) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        office1.equipments.remove(equipment);
+        office2.equipments.add(equipment);
+        equipment.office = office2.name;
     }
 }
