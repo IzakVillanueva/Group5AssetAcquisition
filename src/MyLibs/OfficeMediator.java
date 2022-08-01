@@ -17,11 +17,28 @@ public class OfficeMediator implements IMediator{
     public OfficeMediator(){
         equipmentList = new ArrayList<Equipment>();
         
-        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
-        equipmentList.add(new Computer("Printer 1", 2, "", "new"));
-        equipmentList.add(new Photocopy ("Printer 1", 2, "", "new"));
-        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
+       equipmentList.add(new Printer("Canon", 5, "", "good condition"));
+       equipmentList.add(new Computer("Lenovo", 4, "", "new"));
+       equipmentList.add(new Photocopy ("Xerox", 7, "", "needs repair"));
+       equipmentList.add(new Telephone ("PLDT Home", 7, "", "replacement or lost"));
+       equipmentList.add(new Router ("TP-link N300", 3, "", "good condition"));
+        
+  
+       equipmentList.add(new Telephone("Samsung", 2, "", "new"));
+       equipmentList.add(new Photocopy("Sharp", 10, "", "needs repair"));
+       equipmentList.add(new Computer("Hp", 4, "", "good condition"));
+       equipmentList.add(new Printer("Panasonic", 5, "", "replacement or lost"));
+       equipmentList.add(new Router("Globe", 1, "", "new"));
+       
+       equipmentList.add(new Telephone("Apple", 3, "", "good condition"));
+       equipmentList.add(new Photocopy("Canon", 12, "", "replacement or lost"));
+       equipmentList.add(new Computer("Acer", 6, "", "good condition"));
+       equipmentList.add(new Printer("Lexmark", 2, "", "new"));
+       equipmentList.add(new Router("Smart", 8, "", "needs repair"));
+       
     }
+    
+
     
     @Override
     public void addEquipment(Office office, Equipment equipment) {
