@@ -13,13 +13,16 @@ import java.util.ArrayList;
  */
 public abstract class Office {
     public String name;
-    public int officeHoursStart, officeHoursEnd, squareFeet;
-    public double height, capacity;
+    public int officeHoursStart, officeHoursEnd, capacity;
     public ArrayList<Equipment> equipments = new ArrayList<Equipment>(); 
     private OfficeMediator mediator;
     
-    public Office(OfficeMediator mediator){
+    public Office(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity){
         this.mediator = mediator;
+        this.name = name;
+        this.officeHoursStart = officeHoursStart;
+        this.officeHoursEnd = officeHoursEnd;
+        this.capacity = capacity;
     }
     
     public void openOffice()
@@ -34,8 +37,6 @@ public abstract class Office {
     
     public void addEquipment(Office office, Equipment equipment) {
         mediator.addEquipment(office, equipment);
-        //this.equipments.add(equipment);
-        //equipment.office = equipment.name;
     }
 
     public void removeEquipment(Office office, Equipment equipment) {
