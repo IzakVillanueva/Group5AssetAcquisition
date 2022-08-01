@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Izak
  */
-public class Office {
+public abstract class Office {
     public String name;
     public int officeHoursStart, officeHoursEnd, squareFeet;
     public double height, capacity;
