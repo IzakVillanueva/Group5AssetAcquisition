@@ -18,8 +18,8 @@ public class OfficeMediator implements IMediator{
         equipmentList = new ArrayList<Equipment>();
         
         equipmentList.add(new Printer("Printer 1", 2, "", "new"));
-        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
-        equipmentList.add(new Printer("Printer 1", 2, "", "new"));
+        equipmentList.add(new Computer("Printer 1", 2, "", "new"));
+        equipmentList.add(new Photocopy ("Printer 1", 2, "", "new"));
         equipmentList.add(new Printer("Printer 1", 2, "", "new"));
     }
     
