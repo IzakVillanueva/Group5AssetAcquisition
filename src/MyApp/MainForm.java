@@ -47,6 +47,8 @@ public class MainForm extends javax.swing.JFrame {
         DefaultTableModel off1 = (DefaultTableModel) getOffice1Tbl().getModel();
         DefaultTableModel off2 = (DefaultTableModel) getOffice2Tbl().getModel();
         DefaultTableModel off3 = (DefaultTableModel) getOffice3Tbl().getModel();
+        DefaultTableModel lost = (DefaultTableModel) getlostTbl().getModel();
+        lost.setRowCount(0);
         off1.setRowCount(0);
         off2.setRowCount(0);
         off3.setRowCount(0);
@@ -103,6 +105,9 @@ public class MainForm extends javax.swing.JFrame {
         AddOffice2Btn = new javax.swing.JButton();
         AddOffice3Btn = new javax.swing.JButton();
         lostEqBtn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lostTbl = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,7 +171,7 @@ public class MainForm extends javax.swing.JFrame {
 
         officeLabel3.setText("Office3");
 
-        dispEqBtn1.setText("Show Equipment List");
+        dispEqBtn1.setText("START");
         dispEqBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dispEqBtn1ActionPerformed(evt);
@@ -194,24 +199,36 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        lostEqBtn.setText("jButton1");
+        lostEqBtn.setText("SHOW EQUIPMENT THAT NEEDS ATTENTION");
         lostEqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lostEqBtnActionPerformed(evt);
             }
         });
 
+        lostTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(lostTbl);
+
+        jLabel2.setText("Needs repair, lost, or for replacement");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(AddOffice1Btn)
@@ -231,23 +248,34 @@ public class MainForm extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(AddOffice3Btn)
                                             .addComponent(Office3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(68, 68, 68)
+                                        .addGap(40, 40, 40)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(dispEqBtn1)
-                                            .addComponent(lostEqBtn)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)
-                        .addGap(199, 199, 199)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                                            .addComponent(lostEqBtn)
+                                            .addComponent(dispEqBtn1))))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(207, 207, 207))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(officeLabel1)
@@ -260,7 +288,7 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(Office3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(dispEqBtn1)
-                        .addGap(20, 20, 20)
+                        .addGap(18, 18, 18)
                         .addComponent(lostEqBtn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,15 +363,17 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_AddOffice3BtnActionPerformed
 
     private void lostEqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lostEqBtnActionPerformed
-        DefaultTableModel model = (DefaultTableModel) getEquipmentListTbl().getModel();
+        DefaultTableModel model = (DefaultTableModel) getlostTbl().getModel();
         model.setRowCount(0);
         for(Equipment e:officeMed.equipmentList){
-            String name = e.getName();
-            int years = e.getYears();
-            String office = e.getOffice();
-            String condition = e.getCondition();
-            
-            model.insertRow(model.getRowCount(), new Object[]{name, years, office, condition});
+            if((e.getCondition() == "replacement or lost") || (e.getCondition() == "needs repair")){
+                String name = e.getName();
+                int years = e.getYears();
+                String office = e.getOffice();
+                String condition = e.getCondition();
+                
+                model.insertRow(model.getRowCount(), new Object[]{name, years, office, condition});
+            }
         }
     }//GEN-LAST:event_lostEqBtnActionPerformed
 
@@ -395,8 +425,11 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTable Office3Tbl;
     private javax.swing.JButton dispEqBtn1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton lostEqBtn;
+    private javax.swing.JTable lostTbl;
     private javax.swing.JLabel officeLabel1;
     private javax.swing.JLabel officeLabel2;
     private javax.swing.JLabel officeLabel3;
@@ -432,5 +465,13 @@ public class MainForm extends javax.swing.JFrame {
 
     public void setOffice3Tbl(JTable Office3Tbl) {
         this.Office3Tbl = Office3Tbl;
+    }
+    
+    public JTable getlostTbl() {
+        return lostTbl;
+    }
+
+    public void setlostTbl(JTable lostTbl) {
+        this.lostTbl = lostTbl;
     }
 }
