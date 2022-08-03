@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/CustomerService.java</file>
+            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/Security.java</file>
             <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/OfficeMediator.java</file>
             <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/Office.java</file>
-            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyApp/Test.java</file>
+            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/Headquarters.java</file>
+            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/Printer.java</file>
             <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyApp/MainForm.java</file>
-            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/EquipmentList.java</file>
             <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/Equipment.java</file>
             <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/IMediator.java</file>
+            <file>file:/C:/Users/Izak/Documents/Codes/Java%20(Netbeans%20Projects)/Group5AssetAcquisition/src/MyLibs/ISpecification.java</file>
         </group>
     </open-files>
 </project-private>

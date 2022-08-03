@@ -10,7 +10,7 @@ package MyLibs;
  * @author jeste
  */
 public class Headquarters extends Office{
-        
+    //constructor
     public Headquarters(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity) {
         super(mediator, name, officeHoursStart, officeHoursEnd, capacity);
     }

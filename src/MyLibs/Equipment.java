@@ -35,7 +35,7 @@ public class Equipment {
     public String getCondition() {
         return condition;
     }
-    
+    //constructor
     public Equipment(String name, int years, String office, String condition){
         this.name = name;
         this.years = years;

@@ -17,7 +17,7 @@ public abstract class Office {
     public ArrayList<Equipment> equipments = new ArrayList<Equipment>(); 
     private OfficeMediator mediator;
     
-    public Office(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity){
+    public Office(OfficeMediator mediator, String name, int officeHoursStart, int officeHoursEnd, int capacity){//constructor
         this.mediator = mediator;
         this.name = name;
         this.officeHoursStart = officeHoursStart;
